@@ -24,11 +24,10 @@ class WeatherViewController: UIViewController {
         setupUIWithoutData()
         
         let apiManager = APIManager()
-        apiManager.geocode(address: "Louisville", onSuccess: { (GeocodingData) in
-            print(GeocodingData.formattedAddress)
-            print(GeocodingData.latitude)
-            print(GeocodingData.longitude)
+        apiManager.getWeather(latitude: 38.2527, longitude: -85.7585, onSuccess: { (WeatherData) in
+            
         }) { (error) in
+            
         }
     }
 
@@ -47,4 +46,3 @@ class WeatherViewController: UIViewController {
 
 
 }
-

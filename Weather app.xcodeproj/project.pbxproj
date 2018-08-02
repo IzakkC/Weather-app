@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5847105603B64DB68FBD4E68 /* Pods_Weather_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ADB89A2D09E86235B15D688 /* Pods_Weather_app.framework */; };
+		5B0CB20A2113589400ECC44C /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0CB2092113589400ECC44C /* WeatherData.swift */; };
 		5BB0F1932111FC7D0034532C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0F1922111FC7D0034532C /* AppDelegate.swift */; };
 		5BB0F1952111FC7D0034532C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB0F1942111FC7D0034532C /* WeatherViewController.swift */; };
 		5BB0F1982111FC7D0034532C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB0F1962111FC7D0034532C /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B0CB2092113589400ECC44C /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		5BB0F18F2111FC7D0034532C /* Weather app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB0F1922111FC7D0034532C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BB0F1942111FC7D0034532C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5BB0F1A8211222B20034532C /* GeocodingData.swift */,
+				5B0CB2092113589400ECC44C /* WeatherData.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				5BB0F1952111FC7D0034532C /* WeatherViewController.swift in Sources */,
 				5BB0F1AD2112231D0034532C /* APIManager.swift in Sources */,
 				5BB0F1AB211223100034532C /* APIKeys.swift in Sources */,
+				5B0CB20A2113589400ECC44C /* WeatherData.swift in Sources */,
 				5BB0F1932111FC7D0034532C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

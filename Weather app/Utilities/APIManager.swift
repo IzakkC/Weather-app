@@ -15,6 +15,8 @@ class APIManager {
     
     let googleBaseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
     
+    let darkSkyBaseURL = "https://api.darksky.net/forecast/"
+    
     enum APIError: Error {
         case noData
         case noResponse
@@ -41,4 +43,35 @@ class APIManager {
             }
         }
     }
+    
+    func getWeather(latitude: Double, longitude: Double, onSuccess: @escaping (WeatherData) -> Void, onError: @escaping (Error) -> Void) {
+        let url = "\(darkSkyBaseURL)\(apiKeys.darkSkyKey)/\(latitude),\(longitude)"
+       
+        Alamofire.request(url).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                guard let weatherData = WeatherData(json: json) else {
+                    onError(APIError.invalidData)
+                    return
+                }
+                
+                onSuccess(weatherData)
+            case .failure(let error):
+                onError(error)
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
