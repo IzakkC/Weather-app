@@ -78,7 +78,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="A4H-gj-zmI">
-                        <barButtonItem key="rightBarButtonItem" title="Change Location" id="uWH-VF-9YA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Change Location" id="uWH-VF-9YA">
+                            <connections>
+                                <segue destination="lSw-k0-MNz" kind="show" id="Oqb-b9-iJQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currentTempLabel" destination="iZi-L1-B3F" id="Eib-4z-V6Z"/>
@@ -91,6 +95,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="33.733133433283363"/>
+        </scene>
+        <!--Change Location-->
+        <scene sceneID="NNa-af-mXI">
+            <objects>
+                <viewController title="Change Location" id="lSw-k0-MNz" customClass="LocationSelectViewController" customModule="Weather_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vad-6Y-bnH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ElS-kA-GSp">
+                                <rect key="frame" x="0.0" y="116" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="lSw-k0-MNz" id="cpx-Hg-2Qz"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ElS-kA-GSp" firstAttribute="leading" secondItem="vHG-oO-Tel" secondAttribute="leading" id="1hf-JD-evd"/>
+                            <constraint firstItem="ElS-kA-GSp" firstAttribute="top" secondItem="vHG-oO-Tel" secondAttribute="top" id="Xg0-Pp-Jgc"/>
+                            <constraint firstItem="ElS-kA-GSp" firstAttribute="trailing" secondItem="vHG-oO-Tel" secondAttribute="trailing" id="lXT-iX-TmT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vHG-oO-Tel"/>
+                    </view>
+                    <connections>
+                        <segue destination="vOB-s5-XJw" kind="unwind" identifier="unwindToMainScreen" unwindAction="unwindToMainScreenWithSegue:" id="3pd-xA-n4x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzi-p9-xYx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vOB-s5-XJw" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1743" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kxg-Nb-7rg">
